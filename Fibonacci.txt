@@ -1,0 +1,18 @@
+public class Fibonacci {
+    public static void main(String[] args) {
+        int anterior = 0;
+        int atual = 1;
+        int proximo = 0;
+
+        System.out.print(anterior + ", " + atual);
+
+        while (proximo <= 1000) {
+            proximo = anterior + atual;
+            if (proximo > 1000)
+                break;
+            System.out.print(", " + proximo);
+            anterior = atual;
+            atual = proximo;
+        }
+    }
+}

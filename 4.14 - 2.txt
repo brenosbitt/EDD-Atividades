@@ -1,0 +1,57 @@
+public class Porta {
+    private boolean aberta;
+    private String cor;
+    private double dimensaoX;
+    private double dimensaoY;
+    private double dimensaoZ;
+
+    public Porta() {
+        this.aberta = false;
+        this.cor = "branca";
+        this.dimensaoX = 0.8;
+        this.dimensaoY = 2.0;
+        this.dimensaoZ = 0.05;
+    }
+
+    public void abre() {
+        this.aberta = true;
+    }
+
+    public void fecha() {
+        this.aberta = false;
+    }
+
+    public void pinta(String s) {
+        this.cor = s;
+    }
+
+    public boolean estaAberta() {
+        return this.aberta;
+    }
+
+    public static void main(String[] args) {
+        Porta porta = new Porta();
+
+        System.out.println("Porta está aberta? " + porta.estaAberta());
+        System.out.println("Cor da porta: " + porta.cor);
+        System.out.println("Dimensões da porta (em metros): " + porta.dimensaoX + " x " + porta.dimensaoY + " x " + porta.dimensaoZ);
+
+        porta.abre();
+        System.out.println("\nAbrindo a porta...");
+        System.out.println("Porta está aberta? " + porta.estaAberta());
+
+        porta.fecha();
+        System.out.println("\nFechando a porta...");
+        System.out.println("Porta está aberta? " + porta.estaAberta());
+
+        porta.pinta("vermelho");
+        System.out.println("\nPintando a porta de vermelho...");
+        System.out.println("Cor da porta: " + porta.cor);
+
+        porta.dimensaoX = 1.0;
+        porta.dimensaoY = 2.2;
+        porta.dimensaoZ = 0.06;
+        System.out.println("\nAlterando dimensões da porta...");
+        System.out.println("Novas dimensões da porta (em metros): " + porta.dimensaoX + " x " + porta.dimensaoY + " x " + porta.dimensaoZ);
+    }
+}
